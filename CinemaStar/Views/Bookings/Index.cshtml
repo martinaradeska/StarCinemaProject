@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CinemaStar.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Bookings</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.BookingReference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Movie.TicketPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingReference)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowTime.ShowDate)  -  @Html.DisplayFor(modelItem => item.ShowTime.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.TicketPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class="btn btn-primary"}) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new {@class="btn btn-primary"}) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new {@class="btn btn-primary"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
