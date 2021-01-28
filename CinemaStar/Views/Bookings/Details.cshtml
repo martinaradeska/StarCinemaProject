@@ -1,34 +1,17 @@
 ﻿@model CinemaStar.Models.Booking
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Booking status";
 }
 
-<h2>Details</h2>
+<h2>Booking status</h2>
 
 <div>
-    <h4>Booking</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Movie.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Movie.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ShowTime.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShowTime.Id)
-        </dd>
-
+        <h3>You successfully booked this movie!</h3>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) |
     @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary" })
 </p>

@@ -37,6 +37,7 @@ namespace CinemaStar.Controllers
         }
 
         // GET: Bookings/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.MovieId = new SelectList(db.Movie, "Id", "Name");
@@ -49,6 +50,7 @@ namespace CinemaStar.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "Id,MovieId,ShowTimeId")] Booking booking)
         {
             if (ModelState.IsValid)
@@ -64,6 +66,7 @@ namespace CinemaStar.Controllers
         }
 
         // GET: Bookings/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +88,7 @@ namespace CinemaStar.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,MovieId,ShowTimeId")] Booking booking)
         {
             if (ModelState.IsValid)
@@ -99,6 +103,7 @@ namespace CinemaStar.Controllers
         }
 
         // GET: Bookings/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,6 +120,7 @@ namespace CinemaStar.Controllers
 
         // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

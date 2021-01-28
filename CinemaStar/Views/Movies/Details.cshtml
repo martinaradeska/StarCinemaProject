@@ -4,14 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details about the chosen movie</h2>
 
 <div>
-    <h4>Movie</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            Movie name:  
         </dt>
 
         <dd>
@@ -19,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TicketPrice)
+            Ticket price:  
         </dt>
 
         <dd>
@@ -27,15 +26,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.image_path)
+            Movie poster:  
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.image_path)
+           <img src="@Url.Content(Model.image_path)" alt="Image" width="150" height="200" />
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.rating)
+            Rating:  
         </dt>
 
         <dd>
