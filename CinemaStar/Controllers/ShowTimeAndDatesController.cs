@@ -61,6 +61,7 @@ namespace CinemaStar.Controllers
             return View(showTimeAndDate);
         }
 
+
         // GET: ShowTimeAndDates/Edit/5
         [Authorize(Roles = "Admin")]
 

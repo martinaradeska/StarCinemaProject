@@ -12,19 +12,18 @@
 <table class="table">
     <thead>
         <tr>
-
             <th>
-                @Html.DisplayNameFor(model => model.BookingReference)
+                Booking reference
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ShowTime)
+                Time
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movie)
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.Movie.TicketPrice)
+                Ticket price
             </th>
             <th></th>
         </tr>
@@ -47,9 +46,9 @@
                     @Html.DisplayFor(modelItem => item.Movie.TicketPrice)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class="btn btn-primary"}) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new {@class="btn btn-primary"}) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new {@class="btn btn-primary"})
+                    @Html.ActionLink("Book", "Details", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }
