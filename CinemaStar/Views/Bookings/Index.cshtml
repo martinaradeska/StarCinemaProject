@@ -13,9 +13,6 @@
     <thead>
         <tr>
             <th>
-                Booking reference
-            </th>
-            <th>
                 Time
             </th>
             <th>
@@ -32,9 +29,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BookingReference)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ShowTime.ShowDate)  -  @Html.DisplayFor(modelItem => item.ShowTime.StartTime)
                 </td>
